@@ -8,12 +8,30 @@
         <v-card-text>
           <v-icon size="44px">fas fa-toolbox</v-icon>
           <h1 class="display-2 font-weight-bold mb-3">
-            Experiences / Formations
+            Expériences / Formations
           </h1>
         </v-card-text>
-        <p class="subheading font-weight-regular">
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-        </p>
+        <v-timeline>
+          <v-timeline-item
+            v-for="(year, i) in years"
+            :key="i"
+            :color="year.color"
+            small
+          >
+            <template v-slot:opposite>
+              <span
+                :class="`headline font-weight-bold`"
+                v-text="year.year"
+              ></span>
+            </template>
+            <v-card class="elevation-2">
+              <v-card-title class="headline">Lorem ipsum</v-card-title>
+              <v-card-text>
+                {{ year.text }}
+              </v-card-text>
+            </v-card>
+          </v-timeline-item>
+        </v-timeline>
       </v-flex>
     </v-layout>
   </v-container>
@@ -23,7 +41,25 @@
 export default {
   name: 'Experience',
   data: () => ({
-    // 
+    years: [
+        {
+          color: '#1F7087',
+          year: 'Septembre 2018',
+          text: 'Lorem ipsum dolor sit amet',
+          icon: ''
+        },
+        {
+          color: '#1F8087',
+          year: '2017-2018',
+          text: 'Lorem ipsum dolor sit amet'
+        },
+        {
+          color: '#1F9087',
+          year: '2016',
+          text: 'Lorem ipsum dolor sit amet',
+          icon: ''
+        }
+      ],
   }),
 };
 </script>

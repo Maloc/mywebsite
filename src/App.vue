@@ -4,20 +4,22 @@
       elevate-on-scroll
       fixed
       color="transparent"
+      dark
     >
-      <v-toolbar-title>guil.hoarau@gmail.com</v-toolbar-title>
 
       <div class="flex-grow-1"></div>
 
       <v-toolbar-items>
         <v-btn href="#Accueil" text>Accueil</v-btn>
-        <v-btn href="#Profile" text>Profile</v-btn>
-        <v-btn href="#Article" text>Article</v-btn>
+        <v-btn href="#Profile" text>Profil</v-btn>
+        <v-btn href="#Article" text>Articles</v-btn>
+        <v-btn href="#Experience" text>Expériences</v-btn>
       </v-toolbar-items>
     </v-app-bar>
     <v-parallax
       id="Accueil"
-      src="https://cdn.vuetifyjs.com/images/parallax/material.jpg"
+      src="./assets/bg.jpeg"
+      height="700"
     >
       <div
         align="center"
@@ -25,18 +27,28 @@
       >
         <h1 class="display-2 font-weight-thin mb-4">Lorem ipsum</h1>
         <h4 class="subheading">Lorem ipsum dolor sit amet</h4>
+        <v-btn
+          color="blue-grey"
+          class="ma-2 white--text"
+        >
+          CV en PDF
+          <v-icon right dark>mdi-cloud-upload</v-icon>
+        </v-btn>
       </div>
     </v-parallax>
     <v-content>
       <Profile id="Profile"/>
+      <v-divider></v-divider>
       <Article id="Article"/>
+      <v-divider></v-divider>
       <Experience id="Experience"/>
     </v-content>
     <v-footer
-      dark
+    dark
       padless
     >
       <v-card
+        color="#022238"
         flat
         tile
         class="lighten-1 white--text text-center"
@@ -94,6 +106,6 @@ export default {
 
 <style scoped>
   .v-app-bar.v-app-bar--is-scrolled {
-    background-color: #424242 !important;
+    background-color: #022238!important;
   }
 </style>
