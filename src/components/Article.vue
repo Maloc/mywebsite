@@ -5,7 +5,7 @@
       wrap
     >
       <v-flex mb-4>
-        <v-card-text>
+        <v-card-text style="margin-top: 50px;">
           <v-icon size="44px">far fa-newspaper</v-icon>
           <h1 class="display-2 font-weight-bold mb-3">
             Articles

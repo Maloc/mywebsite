@@ -9,12 +9,34 @@
 
       <div class="flex-grow-1"></div>
 
-      <v-toolbar-items>
-        <v-btn href="#Accueil" text>Accueil</v-btn>
-        <v-btn href="#Profile" text>Profil</v-btn>
-        <v-btn href="#Article" text>Articles</v-btn>
-        <v-btn href="#Experience" text>Expériences</v-btn>
+      <v-toolbar-items class="hidden-sm-and-down">
+        <v-btn 
+          v-for="(item, index) in menu"
+          :key="index"
+          :href="item.link" text>{{ item.title }}</v-btn>
       </v-toolbar-items>
+      <v-menu class="hidden-md-and-up">
+        <template v-slot:activator="{ on }">
+          <v-btn
+            dark
+            icon
+            v-on="on"
+            class="hidden-md-and-up"
+          >
+            <v-icon>mdi-dots-vertical</v-icon>
+          </v-btn>
+        </template>
+
+        <v-list>
+          <v-list-item
+            v-for="(item, i) in menu"
+            :key="i"
+            :href="item.link"
+          >
+            <v-list-item-title>{{ item.title }}</v-list-item-title>
+          </v-list-item>
+        </v-list>
+      </v-menu>
     </v-app-bar>
     <v-parallax
       id="Accueil"
@@ -99,7 +121,13 @@ export default {
         link: 'https://www.linkedin.com/in/guillaume-hoarau-1636a4b6/' },
       { title: 'fab fa-github',
         link: 'https://github.com/Maloc' }
-    ]
+    ],
+    menu: [
+      { title: 'Accueil', link: '#Accueil' },
+      { title: 'Profil', link: '#Profile' },
+      { title: 'Articles', link: '#Article' },
+      { title: 'Expériences', link: '#Experience' }
+      ]
   })
 };
 </script>
