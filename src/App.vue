@@ -64,6 +64,8 @@
       <Article id="Article"/>
       <v-divider></v-divider>
       <Experience id="Experience"/>
+      <v-divider></v-divider>
+      <Contact id="Contact"/>
     </v-content>
     <v-footer
     dark
@@ -105,6 +107,7 @@
 import Profile from './components/Profile';
 import Article from './components/Article';
 import Experience from './components/Experience';
+import Contact from './components/Contact';
 
 export default {
   name: 'App',
@@ -112,6 +115,7 @@ export default {
     Profile,
     Article,
     Experience,
+    Contact
   },
   data: () => ({
     icons: [
@@ -126,7 +130,8 @@ export default {
       { title: 'Accueil', link: '#Accueil' },
       { title: 'Profil', link: '#Profile' },
       { title: 'Articles', link: '#Article' },
-      { title: 'Expériences', link: '#Experience' }
+      { title: 'Expériences', link: '#Experience' },
+      { title: 'Contact', link: '#Contact' }
       ]
   })
 };
