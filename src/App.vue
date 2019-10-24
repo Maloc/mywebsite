@@ -6,7 +6,7 @@
       color="transparent"
       dark
     >
-
+      <v-app-bar-nav-icon class="hidden-md-and-up" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
       <div class="flex-grow-1"></div>
 
       <v-toolbar-items class="hidden-sm-and-down">
@@ -15,29 +15,52 @@
           :key="index"
           :href="item.link" text>{{ item.title }}</v-btn>
       </v-toolbar-items>
-      <v-menu class="hidden-md-and-up">
-        <template v-slot:activator="{ on }">
-          <v-btn
-            dark
-            icon
-            v-on="on"
-            class="hidden-md-and-up"
-          >
-            <v-icon>mdi-dots-vertical</v-icon>
-          </v-btn>
-        </template>
-
-        <v-list>
-          <v-list-item
-            v-for="(item, i) in menu"
-            :key="i"
-            :href="item.link"
-          >
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
-          </v-list-item>
-        </v-list>
-      </v-menu>
+      <v-toolbar-items>
+        <v-menu offset-y>
+          <template v-slot:activator="{ on }">
+            <v-btn
+              depressed
+              color="transparent"
+              v-on="on"
+            >
+              <flag :iso="currentLanguage" v-bind:squared=false />
+            </v-btn>
+          </template>
+          <v-list>
+            <v-list-item
+              v-for="(language, index) in languages"
+              :key="index"
+            >
+              <v-list-item-title>
+                <button @click="changeLocale(language)">
+                    <flag :iso="language.flag" v-bind:squared=false /> {{language.title}}
+                </button>
+              </v-list-item-title>
+            </v-list-item>
+          </v-list>
+        </v-menu>
+      </v-toolbar-items>
     </v-app-bar>
+    <v-navigation-drawer
+      v-model="drawer"
+      app
+      temporary
+    >
+      <v-list nav dense>
+        <v-list-item-group
+          v-model="group"
+          active-class="text--accent-4"
+        >
+            <v-list-item
+              v-for="(item, i) in menu"
+              :key="i"
+              :href="item.link"
+            >
+              <v-list-item-title>{{ item.title }}</v-list-item-title>
+            </v-list-item>
+        </v-list-item-group>
+      </v-list>
+    </v-navigation-drawer>
     <v-parallax
       id="Accueil"
       src="./assets/bg.jpeg"
@@ -47,13 +70,13 @@
         align="center"
         justify="center"
       >
-        <h1 class="display-2 font-weight-thin mb-4">Lorem ipsum</h1>
-        <h4 class="subheading">Lorem ipsum dolor sit amet</h4>
+        <h1 class="display-2 font-weight-thin mb-4">Guillaume Hoarau</h1>
+        <h4 class="subheading">{{ $t('jobTitle') }}</h4>
         <v-btn
           color="blue-grey"
           class="ma-2 white--text"
         >
-          CV en PDF
+          {{ $t('cvButton') }}
           <v-icon right dark>mdi-cloud-upload</v-icon>
         </v-btn>
       </div>
@@ -108,6 +131,7 @@ import Profile from './components/Profile';
 import Article from './components/Article';
 import Experience from './components/Experience';
 import Contact from './components/Contact';
+import i18n from './i18n';
 
 export default {
   name: 'App',
@@ -118,6 +142,9 @@ export default {
     Contact
   },
   data: () => ({
+    drawer: false,
+    group: null,
+    currentLanguage: i18n.locale,
     icons: [
       { title: 'fab fa-medium',
         link: 'https://medium.com/@ghoarau' },
@@ -132,8 +159,23 @@ export default {
       { title: 'Articles', link: '#Article' },
       { title: 'Expériences', link: '#Experience' },
       { title: 'Contact', link: '#Contact' }
-      ]
-  })
+    ],
+    languages: [
+      { flag: 'us', locale: 'en', title: 'English' },
+      { flag: 'fr', locale: 'fr', title: 'French' }
+    ]
+  }),
+  watch: {
+    group () {
+      this.drawer = false
+    },
+  },
+  methods: {
+    changeLocale(langage) {
+      i18n.locale = langage.locale;
+      this.currentLanguage = langage.flag;
+    }
+  }
 };
 </script>
 
