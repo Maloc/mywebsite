@@ -5,7 +5,7 @@
       wrap
     >
       <v-flex mb-4>
-        <v-card-text style="margin-top: 50px;">
+        <v-card-text style="margin-top: 50px; margin-bottom: 50px;">
           <v-icon size="44px">fas fa-toolbox</v-icon>
           <h1 class="display-2 font-weight-bold mb-3">
             Expériences / Formations
