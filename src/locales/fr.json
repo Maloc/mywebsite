@@ -1,4 +1,40 @@
 {
   "cvButton": "CV en PDF",
-  "jobTitle": "DevOps et Développeur blockchain"
+  "jobTitle": "DevOps et Développeur blockchain",
+  "title": [
+    { "title": "Accueil", "link": "#Accueil" },
+    { "title": "Profil", "link": "#Profil" },
+    { "title": "Articles", "link": "#Articles" },
+    { "title": "Expériences", "link": "#Expériences" },
+    { "title": "Contact", "link": "#Contact" }
+  ],
+  "news": [
+    {
+      "color": "#1F7087",
+      "src": "https://miro.medium.com/max/1240/1*nO6ghNwd6skGpXg-PR3ZCQ.png",
+      "title": "Quelles alternatives à Web3.js pour un projet Blockchain ?",
+      "sumup": "Cet article explore les alternatives à Web3.js, notamment Web3.py qui fonctionne avec Python et Nethereum avec C#.",
+      "published": "18-10-2019",
+      "chips": ["Blockchain", "Backend", "Web3"],
+      "link": "https://medium.com/futurs-io/web3-py-nethereum-quelles-alternatives-%C3%A0-web3-js-pour-un-projet-blockchain-91e651f0c1c9"
+    },
+    {
+      "color": "#1F8087",
+      "src": "https://miro.medium.com/max/2364/1*4F0wS_q8PWiPTqVbMAN-UQ.png",
+      "title": "Comment produit-on un projet informatique chez Futurs.io ?",
+      "sumup": "Cet article vise à gérer des projets informatiques complexes en utilisant de nouvelles théories et méthodes",
+      "published": "10-10-2019",
+      "chips": ["Agile", "Projet", "Informatique"],
+      "link": "https://medium.com/futurs-io/quel-langage-utiliser-pour-votre-back-end-cb915a053ccc"
+    },
+    {
+      "color": "#1F9087",
+      "src": "https://miro.medium.com/max/1928/1*S6YXLJgmNZrdg49EGulZvQ.png",
+      "title": "Quel langage utiliser pour votre back-end ?",
+      "sumup": "Le choix d’un langage pour le backend est critique car il va déterminer à la fois l’effort de développement et la maintenabilité d’un projet.",
+      "published": "26-09-2019",
+      "chips": ["JavaScript", "Python", "C#"],
+      "link": "https://medium.com/futurs-io/comment-produit-on-un-projet-informatique-chez-futurs-io-f31ae358c22c"
+    }
+  ]
 }

@@ -11,7 +11,7 @@
 
       <v-toolbar-items class="hidden-sm-and-down">
         <v-btn 
-          v-for="(item, index) in menu"
+          v-for="(item, index) in $t('title')"
           :key="index"
           :href="item.link" text>{{ item.title }}</v-btn>
       </v-toolbar-items>
@@ -52,7 +52,7 @@
           active-class="text--accent-4"
         >
             <v-list-item
-              v-for="(item, i) in menu"
+              v-for="(item, i) in $t('title')"
               :key="i"
               :href="item.link"
             >
@@ -62,7 +62,7 @@
       </v-list>
     </v-navigation-drawer>
     <v-parallax
-      id="Accueil"
+      :id="$t('title.0.title')"
       src="./assets/bg.jpeg"
       height="700"
     >
@@ -82,13 +82,13 @@
       </div>
     </v-parallax>
     <v-content>
-      <Profile id="Profile"/>
+      <Profile :id="$t('title.1.title')"/>
       <v-divider></v-divider>
-      <Article id="Article"/>
+      <Article :id="$t('title.2.title')"/>
       <v-divider></v-divider>
-      <Experience id="Experience"/>
+      <Experience :id="$t('title.3.title')"/>
       <v-divider></v-divider>
-      <Contact id="Contact"/>
+      <Contact :id="$t('title.4.title')"/>
     </v-content>
     <v-footer
     dark
@@ -119,7 +119,7 @@
         <v-divider></v-divider>
 
         <v-card-text class="white--text">
-          {{ new Date().getFullYear() }} — <strong>Guillaume Hoarau</strong>
+          {{ new Date().getFullYear() }} — All Right Reserved — <strong>Guillaume Hoarau</strong>
         </v-card-text>
       </v-card>
     </v-footer>
@@ -152,13 +152,6 @@ export default {
         link: 'https://www.linkedin.com/in/guillaume-hoarau-1636a4b6/' },
       { title: 'fab fa-github',
         link: 'https://github.com/Maloc' }
-    ],
-    menu: [
-      { title: 'Accueil', link: '#Accueil' },
-      { title: 'Profil', link: '#Profile' },
-      { title: 'Articles', link: '#Article' },
-      { title: 'Expériences', link: '#Experience' },
-      { title: 'Contact', link: '#Contact' }
     ],
     languages: [
       { flag: 'us', locale: 'en', title: 'English' },

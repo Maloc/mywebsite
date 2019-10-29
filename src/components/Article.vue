@@ -1,18 +1,20 @@
 <template>
-  <v-container>
+  <v-container
+    style="margin-bottom: 50px;"
+  >
     <v-layout
       text-center
       wrap
     >
       <v-flex mb-4>
-        <v-card-text style="margin-top: 50px; margin-bottom: 50px;">
+        <v-card-text style="margin-top: 50px;">
           <v-icon size="44px">far fa-newspaper</v-icon>
           <h1 class="display-2 font-weight-bold mb-3">
-            Articles
+            {{ $t('title.2.title') }}
           </h1>
         </v-card-text>
         <v-col
-          v-for="(item, i) in items"
+          v-for="(item, i) in $t('news')"
           :key="i"
         >
           <v-card
@@ -51,26 +53,7 @@
 export default {
   name: 'Article',
   data: () => ({
-    items: [
-        {
-          color: '#1F7087',
-          src: 'https://cdn.vuetifyjs.com/images/cards/foster.jpg',
-          title: 'Lorem',
-          sumup: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-          published: '2018-10-23',
-          chips: ['Lorem', 'Ipsum', 'Dolor'],
-          link: "https://medium.com/futurs-io/quel-langage-utiliser-pour-votre-back-end-cb915a053ccc"
-        },
-        {
-          color: '#1F8087',
-          src: 'https://cdn.vuetifyjs.com/images/cards/halcyon.png',
-          title: 'Ipsum',
-          sumup: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-          published: '2018-10-23',
-          chips: ['Lorem', 'Ipsum', 'Dolor'],
-          link: "https://medium.com/futurs-io/quel-langage-utiliser-pour-votre-back-end-cb915a053ccc"
-        },
-      ],
+    //
   }),
 };
 </script>

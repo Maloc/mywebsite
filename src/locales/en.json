@@ -1,4 +1,40 @@
 {
   "cvButton": "CV in PDF",
-  "jobTitle": "DevOps and blockchain developer"
+  "jobTitle": "DevOps and blockchain developer",
+  "title": [
+    { "title": "Home", "link": "#Home" },
+    { "title": "About me", "link": "#About me" },
+    { "title": "News", "link": "#News" },
+    { "title": "Experiences", "link": "#Experiences" },
+    { "title": "Contact", "link": "#Contact" }
+  ],
+  "news": [
+    {
+      "color": "#1F7087",
+      "src": "https://miro.medium.com/max/1240/1*nO6ghNwd6skGpXg-PR3ZCQ.png",
+      "title": "What alternatives to Web3.js for a Blockchain project?",
+      "sumup": "This article explores alternatives to Web3.js, including Web3.py that works with Python and Nethereum with C #.",
+      "published": "2019-10-18",
+      "chips": ["Blockchain", "Backend", "Web3"],
+      "link": "https://medium.com/futurs-io/web3-py-nethereum-quelles-alternatives-%C3%A0-web3-js-pour-un-projet-blockchain-91e651f0c1c9"
+    },
+    {
+      "color": "#1F8087",
+      "src": "https://miro.medium.com/max/2364/1*4F0wS_q8PWiPTqVbMAN-UQ.png",
+      "title": "How do you produce an IT project at Futurs.io?",
+      "sumup": "This article aims to manage complex IT projects using new theories and methods",
+      "published": "2019-10-10",
+      "chips": ["Agile", "Project", "IT"],
+      "link": "https://medium.com/futurs-io/quel-langage-utiliser-pour-votre-back-end-cb915a053ccc"
+    },
+    {
+      "color": "#1F9087",
+      "src": "https://miro.medium.com/max/1928/1*S6YXLJgmNZrdg49EGulZvQ.png",
+      "title": "Which language to use for your back-end?",
+      "sumup": "Choosing a language for the backend is critical because it will determine both the development effort and the maintainability of a project.",
+      "published": "2019-09-26",
+      "chips": ["JavaScript", "Python", "C#"],
+      "link": "https://medium.com/futurs-io/comment-produit-on-un-projet-informatique-chez-futurs-io-f31ae358c22c"
+    }
+  ]
 }
